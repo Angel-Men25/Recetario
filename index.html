@@ -12,6 +12,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.8/glider.min.css">
 </head>
 <body>
     <!-- HEADER -->
@@ -29,33 +31,66 @@
   </header>
 
   <main class="main">
-    <section class="slider">
-      <div class="container slider__div">
+    <section class="container__mt slider">
+      <div class="slider">
         <!-- SLIDER JS -->
-      </div>
-      <div class="container categories__div" id="categories">
-        <!-- categories in JS -->
-        <!-- 
-          <div class="categories__platillo">
-            <div class="categories__img"></div>
-            <h2 class="categories__title">Beef</h2>
-          </div> -->
+        <div class="carousel">
+          <div class="carousel__container">
+            <button aria-label="Previous" class="carousel__prev">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+    
+            <div class="carousel__list">
+              <div class="carousel__item">
+                <img src="assets/images/comida-1.jpg" alt="" class="carousel__img">
+              </div>
+              <div class="carousel__item">
+                <img src="assets/images/comida-2.jpg" alt="" class="carousel__img">
+              </div>
+              <div class="carousel__item">
+                <img src="assets/images/comida-3.jpg" alt="" class="carousel__img">
+              </div>
+              <div class="carousel__item">
+                <img src="assets/images/comida-4.jpg" alt="" class="carousel__img">
+              </div>
+            </div>
+        
+            <button aria-label="Next" class="carousel__next">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+  
+          <div role="tablist" class="carousel__dots"></div>
+        </div>
+        <div class="container categories__div" id="categories">
+          <!-- categories in JS -->
+          <!-- 
+            <div class="categories__platillo">
+              <div class="categories__img"></div>
+              <h2 class="categories__title">Beef</h2>
+            </div> -->
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- SLIDER DE 4 FOTOS DE PLATILLOS DE COMIDA -->
-  
-  <div class="container">
 
-  </div>
-  <hr>
+
+
+
+  <!-- CARD DE PLATILLOS -->
   <section class="section">
     <!-- <div class="section__platillo">
       <div class="section__img"></div>
       <h2 class="section__title">Beef</h2>
     </div> -->
   </section>
+  <!-- slider -->
+  <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.8/glider.min.js"></script>
+  <!-- JS -->
   <script src="js/app.js"></script>
+  <script src="js/slider.js"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/1d47c3ee1f.js" crossorigin="anonymous"></script>
 </body>
 </html>
