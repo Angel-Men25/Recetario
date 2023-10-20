@@ -1,0 +1,52 @@
+:root {
+  --fun-green: #186049;
+  --eden: #247158;
+  --tradewind: #6ab29b;
+  --dawn-pink: #e4d5c7;
+  --almond-frost: #95877a;
+
+  --white: #fff;
+}
+
+body {
+  width: 100%;
+  min-height: 300vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+
+.header {
+  width: 100%;
+  color: var(--white);
+  background-color: var(--eden);
+}
+
+.header__nav {
+  color: var(--white);
+  width: 90%;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.nav__logo {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style-type: none;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: var(--white);
+}
