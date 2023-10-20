@@ -5,7 +5,7 @@
 
 function app() {
   // VARIABLES
-  const divContainer = document.querySelector('.container');
+  const divContainer = document.querySelector('#categories');
   const sectionFood = document.querySelector('.section');
 
   // document.addEventListener('DOMContentLoaded', fetchData);
@@ -34,17 +34,17 @@ function app() {
       const { idCategory, strCategory, strCategoryThumb } = category;
       // DIV
       const platillo = document.createElement('button');
-      platillo.classList.add('platillo');
+      platillo.classList.add('categories__platillo');
       platillo.dataset.id = strCategory;
 
       // IMG
       const imgPlatillo = document.createElement('img');
       imgPlatillo.src = strCategoryThumb;
-      imgPlatillo.classList.add('img');
+      imgPlatillo.classList.add('categories__img');
 
       // TITLE
       const titlePlatillo = document.createElement('h2');
-      titlePlatillo.classList.add('title');
+      titlePlatillo.classList.add('categories__title');
       titlePlatillo.innerText = strCategory;
 
 
