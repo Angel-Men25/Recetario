@@ -10,8 +10,12 @@
 
 body {
   width: 100%;
-  min-height: 300vh;
   font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  width: 90%;
+  margin: 5rem auto;
 }
 
 /* HEADER */
@@ -49,4 +53,19 @@ body {
 .menu li a {
   text-decoration: none;
   color: var(--white);
+
+  position: relative;
+  overflow: hidden;
+}
+.menu li a:after {
+  content: '';
+  position: absolute;
+  background-color: var(--tradewind);
+  width: 100%;
+  height: 3px;
+  top: 23px;
+  display: none;
+}
+.menu li a:hover::after {
+  display: block;
 }
