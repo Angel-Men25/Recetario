@@ -1,6 +1,6 @@
 
 // VARIABLES
-const recetaContainer = document.querySelector('#receta');
+const recipeSection = document.querySelector('#recipe');
 
 // EVENT LISTENERS
 document.addEventListener('DOMContentLoaded', obtainIdParam);
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', obtainIdParam);
 function obtainIdParam() {
   const parametrosURL = new URLSearchParams(window.location.search);
   const idMeal = parseInt(parametrosURL.get('id'));
-  console.log(idMeal);
+  // console.log(idMeal);
   fetchDescription(idMeal);
 }
 
@@ -26,51 +26,136 @@ async function fetchDescription(id) {
 }
 
 function showDescription(description) {
-  console.log(description);
-  const { strMeal, strArea, strInstructions, strMealThumb, strYoutube } = description;
+  // console.log(description);
+  const { strMeal, strArea, strInstructions, strMealThumb, strYoutube, strCategory } = description;
   // META TAG TITLE
   const titleTag = document.getElementsByTagName('title');
   titleTag[0].innerText = strMeal;
 
-  // TITLE
-  const titleMeal = document.createElement('h1');
-  titleMeal.innerText = strMeal;
-  
-  // CONTRY DIV
-  const countryMealDiv = document.createElement('div');
-  countryMealDiv.classList.add('contry__div');
 
+  // recipe__contry
+  const recipeContry = document.createElement('div');
+  recipeContry.classList.add('recipe__contry');
+  // contry__flag
   let countryName = strArea.toLowerCase();
-  // DIV IMG
-  const countryMealImg = document.createElement('img');
-  countryMealImg.src = `./assets/images/${countryName}.png`;
-  countryMealImg.classList.add('country__flag');
-  // DIV COUNTRY NAME
-  const contryMealText = document.createElement('p');
-  contryMealText.innerText = strArea;
+  const contryFlag = document.createElement('img');
+  contryFlag.classList.add('country__flag');
+  contryFlag.src = `./assets/images/${countryName}.png`;
+  contryFlag.alt = `${strArea} flag`;
+  // contry__name
+  const contryName = document.createElement('p');
+  contryName.classList.add('contry__name');
+  contryName.innerText = strArea;
 
-  countryMealDiv.appendChild(countryMealImg);
-  countryMealDiv.appendChild(contryMealText);
+  recipeContry.appendChild(contryFlag);
+  recipeContry.appendChild(contryName);
 
-  // IMG
-  const imgMeal = document.createElement('img');
-  imgMeal.src = strMealThumb;
-  imgMeal.width = '200';
-  
-  // INSTRUCTIONS
-  const instructionsMeal = document.createElement('p');
-  instructionsMeal.innerText = strInstructions;
+  // recipe__texts
+  const recipeTexts = document.createElement('div');
+  recipeTexts.classList.add('recipe__texts');
+  // recipe__title
+  const recipeTitle = document.createElement('h1');
+  recipeTitle.classList.add('recipe__title');
+  recipeTitle.innerText = strMeal;
+  // recipe__category
+  const recipeCategory = document.createElement('p');
+  recipeCategory.classList.add('recipe__category');
+  recipeCategory.innerHTML = `Category: <span>${strCategory}</span>`;
 
-  // LINK TO YT
-  const linkMeal = document.createElement('a');
-  linkMeal.href = strYoutube;
-  linkMeal.target = '_blank';
-  linkMeal.innerText = 'Ver video';
+  recipeTexts.appendChild(recipeTitle);
+  recipeTexts.appendChild(recipeCategory);
+  recipeTexts.appendChild(recipeContry);
+
+  // recipe__picture
+  const recipePicture = document.createElement('div');
+  recipePicture.classList.add('recipe__picture');
+  // recipe__img
+  const recipeImg = document.createElement('img');
+  recipeImg.classList.add('recipe__img');
+  recipeImg.src = strMealThumb;
+  recipeImg.alt = strMeal;
+  recipePicture.appendChild(recipeImg);
+
+  // recipe__div
+  const recipeDiv = document.createElement('div');
+  recipeDiv.classList.add('recipe__div');
+
+  recipeDiv.appendChild(recipePicture);
+  recipeDiv.appendChild(recipeTexts);
+
+  // recipe__top
+  const recipeTop = document.createElement('div');
+  recipeTop.classList.add('recipe__top');
+
+  recipeTop.appendChild(recipeDiv);
+
+  recipeSection.appendChild(recipeTop);
+
+  // RECIPE__CONTAINER
+  const recipeContainer = document.createElement('div');
+  recipeContainer.classList.add('container', 'recipe__container');
+
+  // ingredients__list
+  const ingredientsList = document.createElement('ul');
+  ingredientsList.classList.add('ingredients__list');
+
+  // Show ingredients and portions
+  for (let i = 1; i <= 20; i++) {
+    if (description[`strIngredient${i}`]) {
+      const ingredient = description[`strIngredient${i}`];
+      const portion = description[`strMeasure${i}`];
+
+      const ingredientLi = document.createElement('li');
+      ingredientLi.classList.add('ingredients__item');
+      ingredientLi.textContent = `${portion} - ${ingredient}`;
+      ingredientsList.appendChild(ingredientLi);
+    }
+  }
+
+  // instructions__title
+  const ingredientsTitle = document.createElement('h2');
+  ingredientsTitle.classList.add('instructions__title');
+  ingredientsTitle.innerText = 'Ingredients';
+
+  // recipe__ingredients
+  const recipeIngredients = document.createElement('div');
+  recipeIngredients.classList.add('recipe__ingredients');
+
+  recipeIngredients.appendChild(ingredientsTitle);
+  recipeIngredients.appendChild(ingredientsList);
 
 
-  recetaContainer.appendChild(titleMeal);
-  recetaContainer.appendChild(countryMealDiv);
-  recetaContainer.appendChild(imgMeal);
-  recetaContainer.appendChild(instructionsMeal);
-  recetaContainer.appendChild(linkMeal);
+  // RECIPE__INSTRUCTIONS
+  // recipe__instructions
+  const recipeInstructions = document.createElement('div');
+  recipeInstructions.classList.add('recipe__instructions');
+
+  // instructions__text
+  const instructionsText = document.createElement('p');
+  instructionsText.classList.add('instructions__text');
+  instructionsText.innerText = strInstructions;
+
+  // instructions__title
+  const instructionsTitle = document.createElement('h2');
+  instructionsTitle.classList.add('instructions__title');
+  instructionsTitle.innerText = "Let's cook!";
+
+  recipeInstructions.appendChild(instructionsTitle);
+  recipeInstructions.appendChild(instructionsText);
+
+
+  // LINK TO YOUTUBE
+  // instructions__link
+  const instructionsLink = document.createElement('a');
+  instructionsLink.classList.add('instructions__link');
+  instructionsLink.href = strYoutube;
+  instructionsLink.target = '_blank';
+  instructionsLink.innerText = 'Watch video';
+
+
+  recipeContainer.appendChild(recipeIngredients);
+  recipeContainer.appendChild(recipeInstructions);
+  recipeContainer.appendChild(instructionsLink);
+
+  recipeSection.appendChild(recipeContainer);
 }

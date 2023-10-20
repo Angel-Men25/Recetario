@@ -57,13 +57,16 @@ body {
 
 .menu {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   list-style-type: none;
 }
 
 .menu li .nav__link {
   text-decoration: none;
   color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 1.3px;
 
   position: relative;
   overflow: hidden;
