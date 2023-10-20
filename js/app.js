@@ -5,8 +5,8 @@
 
 function app() {
   // VARIABLES
-  const divContainer = document.querySelector('#categories');
-  const sectionFood = document.querySelector('.section');
+  const divCategories = document.querySelector('#categories');
+  const cardsContainer = document.querySelector('#cardsContainer');
 
   // document.addEventListener('DOMContentLoaded', fetchData);
   fetchData();
@@ -33,39 +33,39 @@ function app() {
     categories.forEach(category => {
       const { idCategory, strCategory, strCategoryThumb } = category;
       // DIV
-      const platillo = document.createElement('button');
-      platillo.classList.add('categories__platillo');
-      platillo.dataset.id = strCategory;
+      const dishBtn = document.createElement('button');
+      dishBtn.classList.add('categories__card');
+      dishBtn.dataset.id = strCategory;
 
       // IMG
-      const imgPlatillo = document.createElement('img');
-      imgPlatillo.src = strCategoryThumb;
-      imgPlatillo.classList.add('categories__img');
+      const mealImg = document.createElement('img');
+      mealImg.src = strCategoryThumb;
+      mealImg.classList.add('categories__img');
 
       // TITLE
-      const titlePlatillo = document.createElement('h2');
-      titlePlatillo.classList.add('categories__title');
-      titlePlatillo.innerText = strCategory;
+      const mealTitle = document.createElement('h2');
+      mealTitle.classList.add('categories__title');
+      mealTitle.innerText = strCategory;
 
 
-      platillo.appendChild(imgPlatillo);
-      platillo.appendChild(titlePlatillo);
+      dishBtn.appendChild(mealImg);
+      dishBtn.appendChild(mealTitle);
 
-      divContainer.appendChild(platillo);
+      divCategories.appendChild(dishBtn);
     });
   }
 
-  divContainer.addEventListener('click', showTarget);
+  divCategories.addEventListener('click', showTarget);
 
   function showTarget(e) {
-    const namePlatillo = e.target.parentElement.getAttribute('data-id');
-    console.log(namePlatillo);
-    fetchDish(namePlatillo);
+    const dishName = e.target.parentElement.getAttribute('data-id');
+    console.log(dishName);
+    fetchDish(dishName);
   }
 
-  async function fetchDish(namePlatillo) {
+  async function fetchDish(dishName) {
     try {
-      const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${namePlatillo}`;
+      const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${dishName}`;
       const response = await fetch(url);
       const data = await response.json();
       showDishContainer(data.meals);
@@ -80,34 +80,39 @@ function app() {
     limpiarHTML();
 
     meals.forEach(meal => {
-      const { idMeal, strMeal, strMealThumb } = meal
-      // console.log(meal);
-      // ESCRIBIR HTML PARA VER COMO SE MOSTRARA CADA PLATILLO
-      const aPlatillo = document.createElement('a');
-      aPlatillo.classList.add('platillo__link');
-      aPlatillo.href = `recipe.html?id=${idMeal}`;
-      aPlatillo.target = '_blank';
+      const { idMeal, strMeal, strMealThumb } = meal;
+      // a CARD
+      const mealCard = document.createElement('a');
+      mealCard.classList.add('platillo__link');
+      mealCard.href = `recipe.html?id=${idMeal}`;
+      mealCard.target = '_blank';
 
+
+      // ========================================================
+      // CAMBIAR CLASES DE LAS CARDS PARA QUE TENGAN MEJOR SENTIDO
+      // ========================================================
+
+      
       // IMG
-      const imgPlatillo = document.createElement('img');
-      imgPlatillo.src = strMealThumb;
-      imgPlatillo.classList.add('img');
+      const mealImg = document.createElement('img');
+      mealImg.src = strMealThumb;
+      mealImg.classList.add('img');
 
       // TITLE
-      const titlePlatillo = document.createElement('h2');
-      titlePlatillo.classList.add('title');
-      titlePlatillo.innerText = strMeal;
+      const mealTitle = document.createElement('h2');
+      mealTitle.classList.add('title');
+      mealTitle.innerText = strMeal;
 
-      aPlatillo.appendChild(imgPlatillo);
-      aPlatillo.appendChild(titlePlatillo);
+      mealCard.appendChild(mealImg);
+      mealCard.appendChild(mealTitle);
 
-      sectionFood.appendChild(aPlatillo);
+      cardsContainer.appendChild(mealCard);
     });
   }
 
   function limpiarHTML() {
-    while (sectionFood.firstChild) {
-      sectionFood.removeChild(sectionFood.firstChild);
+    while (cardsContainer.firstChild) {
+      cardsContainer.removeChild(cardsContainer.firstChild);
     }
   }
 

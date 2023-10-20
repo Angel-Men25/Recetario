@@ -77,7 +77,7 @@
   justify-content: center;
 }
 
-.categories__platillo {
+.categories__card {
   border: none;
   background: none;
   outline: none;
@@ -90,7 +90,7 @@
   display: grid;
   grid-template-rows: 1fr 40px;
 }
-.categories__platillo:hover {
+.categories__card:hover {
   background-color: rgba(128, 128, 128, 0.09);
 }
 
@@ -102,6 +102,7 @@
 
 .categories__title {
   font-size: 0.9rem;
+  font-weight: 500;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: center;

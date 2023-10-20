@@ -20,7 +20,7 @@ body {
 
 .container__mt {
   width: 80%;
-  margin: 0 auto 5rem;
+  margin: 3rem auto 5rem;
 }
 
 /* HEADER */
@@ -72,5 +72,8 @@ body {
   display: none;
 }
 .menu li a:hover::after {
+  display: block;
+}
+.menu li a.active:after {
   display: block;
 }
