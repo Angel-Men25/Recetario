@@ -85,14 +85,8 @@ function app() {
       // ESCRIBIR HTML PARA VER COMO SE MOSTRARA CADA PLATILLO
       const aPlatillo = document.createElement('a');
       aPlatillo.classList.add('platillo__link');
-      aPlatillo.href = `receta.html?id=${idMeal}`;
+      aPlatillo.href = `recipe.html?id=${idMeal}`;
       aPlatillo.target = '_blank';
-      // aPlatillo.dataset.id = idMeal;
-      // aPlatillo.onclick = (e) => {
-      //   const id = e.target.parentElement.getAttribute('data-id');
-      //   console.log(id);
-      //   fetchDescription(id);
-      // }
 
       // IMG
       const imgPlatillo = document.createElement('img');
@@ -110,22 +104,6 @@ function app() {
       sectionFood.appendChild(aPlatillo);
     });
   }
-
-  // async function fetchDescription(id) {
-  //   try {
-  //     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
-  //     const response = await fetch(url);
-  //     const data = await response.json();
-  //     console.log(data.meals);
-  //     showDescription(data.meals);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
-
-  // function showDescription(description = []) {
-  //   console.log(description);
-  // }
 
   function limpiarHTML() {
     while (sectionFood.firstChild) {

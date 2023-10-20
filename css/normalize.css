@@ -9,12 +9,16 @@
   box-sizing: border-box;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
- html {
+html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
