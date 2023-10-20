@@ -15,12 +15,14 @@ body {
 
 .container {
   width: 80%;
-  margin: 5rem auto;
+  margin: 0 auto;
+  padding: 3rem 0;
 }
 
 .container__mt {
   width: 80%;
-  margin: 3rem auto 5rem;
+  margin: 5rem auto 0;
+  padding: 3rem 0 0;
 }
 
 /* HEADER */
@@ -29,6 +31,10 @@ body {
   width: 100%;
   color: var(--white);
   background-color: var(--eden);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 .header__nav {
@@ -55,14 +61,14 @@ body {
   list-style-type: none;
 }
 
-.menu li a {
+.menu li .nav__link {
   text-decoration: none;
   color: var(--white);
 
   position: relative;
   overflow: hidden;
 }
-.menu li a:after {
+.menu li .nav__link:after {
   content: '';
   position: absolute;
   background-color: var(--tradewind);
@@ -71,9 +77,9 @@ body {
   top: 23px;
   display: none;
 }
-.menu li a:hover::after {
+.menu li .nav__link:hover::after {
   display: block;
 }
-.menu li a.active:after {
+.menu li .nav__link.active:after {
   display: block;
 }

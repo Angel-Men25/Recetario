@@ -20,11 +20,11 @@
   <header class="header">
     <div class="header__nav">
       <a href="#" class="nav__logo">LOGO</a>
-      <nav class="nav__nav">
+      <nav>
         <ul class="menu">
-          <li><a href="index.html" class="active">Recipes</a></li>
-          <li><a href="inspiration.html">Inspiration</a></li>
-          <li><a href="opinion.html">Your opinion</a></li>
+          <li><a href="index.html" class="nav__link active">Recipes</a></li>
+          <li><a href="inspiration.html" class="nav__link">Inspiration</a></li>
+          <li><a href="opinion.html" class="nav__link">Your opinion</a></li>
         </ul>
       </nav>
     </div>
@@ -62,7 +62,9 @@
   
           <div role="tablist" class="carousel__dots"></div>
         </div>
-        <div class="container categories__div" id="categories">
+
+        <!-- CATEGORIES CONTAINER -->
+        <div class="categories__div" id="categories">
           <!-- categories in JS -->
           <!-- 
             <div class="categories__platillo">
@@ -71,6 +73,16 @@
             </div> -->
         </div>
       </div>
+    </section>
+
+    <!-- CARDS CONTAINER -->
+    <section class="container cards" id="cardsContainer">
+      <!-- 
+      <div class="card">
+        <div class="card__img"></div>
+        <h2 class="card__title">Beef</h2>
+      </div>
+      -->
     </section>
   </main>
 

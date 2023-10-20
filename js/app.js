@@ -83,7 +83,7 @@ function app() {
       const { idMeal, strMeal, strMealThumb } = meal;
       // a CARD
       const mealCard = document.createElement('a');
-      mealCard.classList.add('platillo__link');
+      mealCard.classList.add('card');
       mealCard.href = `recipe.html?id=${idMeal}`;
       mealCard.target = '_blank';
 
@@ -92,15 +92,15 @@ function app() {
       // CAMBIAR CLASES DE LAS CARDS PARA QUE TENGAN MEJOR SENTIDO
       // ========================================================
 
-      
+
       // IMG
       const mealImg = document.createElement('img');
       mealImg.src = strMealThumb;
-      mealImg.classList.add('img');
+      mealImg.classList.add('card__img');
 
       // TITLE
-      const mealTitle = document.createElement('h2');
-      mealTitle.classList.add('title');
+      const mealTitle = document.createElement('h3');
+      mealTitle.classList.add('card__title');
       mealTitle.innerText = strMeal;
 
       mealCard.appendChild(mealImg);
