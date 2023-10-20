@@ -16,8 +16,14 @@
   <header class="header">
     <div class="header__nav">
       <a href="#" class="nav__logo">LOGO</a>
-      <nav class="nav__nav">
-        <ul class="menu">
+      <button class="open-menu" id="open-menu">
+        <img src="./assets/icons/open-menu.svg" alt="Open menu">
+      </button>
+      <nav>
+        <ul class="menu" id="menu">
+          <button class="close-menu" id="close-menu">
+            <img src="./assets/icons/close-menu.svg" alt="Close menu">
+          </button>
           <li><a href="index.html" class="nav__link">Recipes</a></li>
           <li><a href="inspiration.html" class="nav__link active">Inspiration</a></li>
           <li><a href="opinion.html" class="nav__link">Your opinion</a></li>
@@ -25,5 +31,7 @@
       </nav>
     </div>
   </header>
+
+  <script src="js/menu.js"></script>
 </body>
 </html>

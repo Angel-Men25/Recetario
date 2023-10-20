@@ -6,7 +6,8 @@
 function app() {
   // VARIABLES
   const divCategories = document.querySelector('#categories');
-  const cardsContainer = document.querySelector('#cardsContainer');
+  const cardsSection = document.querySelector('.cards__section');
+  const cardsContainer = document.querySelector('#cards-container');
 
   // document.addEventListener('DOMContentLoaded', fetchData);
   fetchData();
@@ -59,7 +60,6 @@ function app() {
 
   function showTarget(e) {
     const dishName = e.target.parentElement.getAttribute('data-id');
-    console.log(dishName);
     fetchDish(dishName);
   }
 
@@ -76,6 +76,17 @@ function app() {
 
   function showDishContainer(meals) {
 
+    cardsSection.style.margin = '5rem auto';
+
+    limpiarHTMLSECTION();
+
+    const recipesLength = meals.length;
+
+    const cardsSectionTitle = document.createElement('h2');
+    cardsSectionTitle.classList.add('cards__section-title')
+    cardsSectionTitle.innerHTML = `(${recipesLength}) Recipes`;
+    cardsSection.appendChild(cardsSectionTitle);
+
     // Limpiar HTML
     limpiarHTML();
 
@@ -86,12 +97,6 @@ function app() {
       mealCard.classList.add('card');
       mealCard.href = `recipe.html?id=${idMeal}`;
       mealCard.target = '_blank';
-
-
-      // ========================================================
-      // CAMBIAR CLASES DE LAS CARDS PARA QUE TENGAN MEJOR SENTIDO
-      // ========================================================
-
 
       // IMG
       const mealImg = document.createElement('img');
@@ -108,11 +113,20 @@ function app() {
 
       cardsContainer.appendChild(mealCard);
     });
+
+    cardsSection.appendChild(cardsContainer);
+
   }
 
   function limpiarHTML() {
     while (cardsContainer.firstChild) {
       cardsContainer.removeChild(cardsContainer.firstChild);
+    }
+  }
+
+  function limpiarHTMLSECTION() {
+    while (cardsSection.firstChild) {
+      cardsSection.removeChild(cardsSection.firstChild);
     }
   }
 

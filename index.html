@@ -20,8 +20,14 @@
   <header class="header">
     <div class="header__nav">
       <a href="#" class="nav__logo">LOGO</a>
+      <button class="open-menu" id="open-menu">
+        <img src="./assets/icons/open-menu.svg" alt="Open menu">
+      </button>
       <nav>
-        <ul class="menu">
+        <ul class="menu" id="menu">
+          <button class="close-menu" id="close-menu">
+            <img src="./assets/icons/close-menu.svg" alt="Close menu">
+          </button>
           <li><a href="index.html" class="nav__link active">Recipes</a></li>
           <li><a href="inspiration.html" class="nav__link">Inspiration</a></li>
           <li><a href="opinion.html" class="nav__link">Your opinion</a></li>
@@ -42,16 +48,16 @@
     
             <div class="carousel__list">
               <div class="carousel__item">
-                <img src="assets/images/comida-1.jpg" alt="" class="carousel__img">
+                <img src="assets/images/comida-4.jpg" alt="Platillo 1" class="carousel__img">
               </div>
               <div class="carousel__item">
-                <img src="assets/images/comida-2.jpg" alt="" class="carousel__img">
+                <img src="assets/images/comida-2.jpg" alt="Platillo 2" class="carousel__img">
               </div>
               <div class="carousel__item">
-                <img src="assets/images/comida-3.jpg" alt="" class="carousel__img">
+                <img src="assets/images/comida-3.jpg" alt="Platillo 3" class="carousel__img">
               </div>
               <div class="carousel__item">
-                <img src="assets/images/comida-4.jpg" alt="" class="carousel__img">
+                <img src="assets/images/comida-1.jpg" alt="Platillo 4" class="carousel__img">
               </div>
             </div>
         
@@ -64,19 +70,25 @@
         </div>
 
         <!-- CATEGORIES CONTAINER -->
-        <div class="categories__div" id="categories">
-          <!-- categories in JS -->
-          <!-- 
-            <div class="categories__platillo">
-              <div class="categories__img"></div>
-              <h2 class="categories__title">Beef</h2>
-            </div> -->
+        <div>
+          <h1 class="categories__main-title">Categories</h1>
+          <div class="categories__div" id="categories">
+            <!-- categories in JS -->
+            <!-- 
+              <div class="categories__platillo">
+                <div class="categories__img"></div>
+                <h2 class="categories__title">Beef</h2>
+              </div> -->
+          </div>
         </div>
       </div>
     </section>
 
     <!-- CARDS CONTAINER -->
-    <section class="container cards" id="cardsContainer">
+    <section class="container cards__section">
+      <div class="cards" id="cards-container">
+
+      </div>
       <!-- 
       <div class="card">
         <div class="card__img"></div>
@@ -84,24 +96,23 @@
       </div>
       -->
     </section>
+
+    <!-- RANDOM MEAL -->
+    <section class="container random__container">
+      <div class="random__card">
+        <!-- RANDOM MEAL -->
+      </div>
+    </section>
   </main>
 
 
 
-
-
-  <!-- CARD DE PLATILLOS -->
-  <section class="section" id="cardsContainer">
-    <!-- <div class="section__platillo">
-      <div class="section__img"></div>
-      <h2 class="section__title">Beef</h2>
-    </div> -->
-  </section>
   <!-- slider -->
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.8/glider.min.js"></script>
   <!-- JS -->
   <script src="js/app.js"></script>
   <script src="js/slider.js"></script>
+  <script src="js/menu.js"></script>
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/1d47c3ee1f.js" crossorigin="anonymous"></script>
 </body>
