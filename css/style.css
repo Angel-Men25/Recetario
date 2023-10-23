@@ -172,6 +172,41 @@
   font-size: 1rem;
 }
 
+/* RANDOM CONTAINER */
+
+.random__container {
+  padding: 3rem 0;
+  background-color: #ffffff;
+  opacity: 0.8;
+  background-image:  radial-gradient(#6ab29b 1.25px, transparent 1.25px), radial-gradient(#6ab29b 1.25px, #ffffff 1.25px);
+  background-size: 50px 50px;
+  background-position: 0 0,25px 25px;
+}
+
+.random__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.random__btn {
+  border: none;
+  color: var(--white);
+  background-color: var(--eden);
+  border: 2px solid transparent;
+  padding: 0.6rem 1rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.random__btn:hover {
+  color: var(--eden);
+  background-color: var(--white);
+  border: 2px solid var(--eden);
+}
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 979px) {
@@ -204,6 +239,13 @@
     width: 180px;
     gap: 0.8rem;
   }
+
+  /* RANDOM CONTAINER */
+
+  .random__title,
+  .random__text {
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 485px) {
@@ -213,9 +255,3 @@
   }
 }
 
-@media screen and (max-width: 485px) {
-  .card {
-    width: 130px;
-    gap: 0.8rem;
-  }
-}

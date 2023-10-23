@@ -101,7 +101,38 @@
   text-decoration: none;
   color: var(--white);
   background-color: var(--tradewind);
+  border: 2px solid transparent;
   justify-self: flex-start;
   padding: 0.6rem 1rem;
   border-radius: 0.4rem;
+  transition: all 0.2s linear;
+}
+
+.instructions__link:hover {
+  color: var(--tradewind);
+  background-color: var(--white);
+  border: 2px solid var(--tradewind);
+}
+
+@media screen and (max-width: 767px) {
+  .instructions__text {
+    width: 100%;
+  }
+
+  .recipe__div {
+    width: 90%;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 1rem;
+  }
+
+  .recipe__top {
+    max-height: min-content;
+  }
+
+  .recipe__texts {
+    padding: 3rem 0;
+  }
+  
 }
