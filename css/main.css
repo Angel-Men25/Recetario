@@ -115,7 +115,15 @@ body {
 @media screen and (max-width: 768px) {
   .open-menu,
   .close-menu {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 8px;
+  }
+  .open-menu:hover,
+  .close-menu:hover {
+    background-color: #6ab29b21;
   }
 
   .open-menu {
@@ -130,17 +138,19 @@ body {
     height: 100%;
     background-color: var(--fun-green);
     transform: translateX(100%);
-    transition: all 0.3s linear;
+    opacity: 60%;
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.320, 1);
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4rem;
+    gap: 3.5rem;
     z-index: 20;
   }
 
   .menu.active {
     transform: translateX(0);
+    opacity: 100%;
   }
 
   .menu li .nav__link {

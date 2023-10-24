@@ -192,7 +192,7 @@
 }
 
 .random__btn {
-  border: none;
+  text-decoration: none;
   color: var(--white);
   background-color: var(--eden);
   border: 2px solid transparent;

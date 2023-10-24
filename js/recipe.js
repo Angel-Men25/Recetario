@@ -6,19 +6,44 @@ const recipeSection = document.querySelector('#recipe');
 document.addEventListener('DOMContentLoaded', obtainIdParam);
 
 // FUNCTIONS
+// function obtainIdParam() {
+//   const parametrosURL = new URLSearchParams(window.location.search);
+//   const idMeal = parseInt(parametrosURL.get('id'));
+//   console.log(parametrosURL);
+//   console.log(idMeal);
+//   // fetchDescription(idMeal);
+// }
+
 function obtainIdParam() {
   const parametrosURL = new URLSearchParams(window.location.search);
-  const idMeal = parseInt(parametrosURL.get('id'));
-  // console.log(idMeal);
-  fetchDescription(idMeal);
+
+  if (parametrosURL.get('id') !== null) {
+    const idMeal = parseInt(parametrosURL.get('id'));
+    fetchDescriptionId(idMeal);
+  } else {
+    fetchRandomMeal();
+  }
 }
 
-async function fetchDescription(id) {
+// Fetch when URL has ID parameter
+async function fetchDescriptionId(id) {
   try {
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
     const response = await fetch(url);
     const data = await response.json();
     // console.log(data.meals);
+    showDescription(data.meals[0]);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// Fetch when URL has a random.php
+async function fetchRandomMeal() {
+  try {
+    const url = 'https://www.themealdb.com/api/json/v1/1/random.php';
+    const response = await fetch(url);
+    const data = await response.json();
     showDescription(data.meals[0]);
   } catch (error) {
     console.log(error);

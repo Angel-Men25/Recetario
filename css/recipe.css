@@ -90,11 +90,16 @@
   margin-top: 1rem;
 }
 
+.ingredients__item {
+  margin-bottom: 0.4rem;
+}
+
 /* INSTRUCTIONS */
 
 .instructions__text {
   margin-top: 1rem;
   width: 80%;
+  line-height: 1.5;
 }
 
 .instructions__link {
@@ -132,7 +137,7 @@
   }
 
   .recipe__texts {
-    padding: 3rem 0;
+    padding-bottom: 2rem;
   }
   
 }

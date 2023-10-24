@@ -8,6 +8,8 @@ function app() {
   const divCategories = document.querySelector('#categories');
   const cardsSection = document.querySelector('.cards__section');
   const cardsContainer = document.querySelector('#cards-container');
+  
+  const randomBtn = document.querySelector('#random-meal');
 
   // document.addEventListener('DOMContentLoaded', fetchData);
   fetchData();

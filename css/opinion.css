@@ -1,0 +1,17 @@
+:root {
+  --fun-green: #186049;
+  --fun-green-opacity: #0ea0723e;
+  --eden: #247158;
+  --tradewind: #6ab29b;
+  --dawn-pink: #e4d5c7;
+  --almond-frost: #95877a;
+
+  --white: #fff;
+}
+
+/* MAIN */
+
+.opinion {
+  margin: 4rem 0;
+}
+
