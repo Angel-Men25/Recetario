@@ -36,16 +36,18 @@
   <main class="main">
     <section class="opinion">
       <div class="container">
-        <form>
-          <!-- <h2></h2> -->
+        <h2 class="opinion__title">Your Opinion</h2>
+        <p class="opinion__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae adipisci distinctio quo totam sequi ea nesciunt nisi esse autem sapiente, velit sed at laborum omnis dolor animi iusto modi! Rerum.</p>
+        <form class="form" id="form">
           <div class="form__group">
             <label>What do you think of the website?</label>
-            <select name="" id="question-1">
-              <option value="0">Very satisfied</option>
-              <option value="1">Satisfied</option>
-              <option value="3">Neutral</option>
-              <option value="4">Dissatisfied</option>
-              <option value="5">Very dissatisfied</option>
+            <select id="select">
+              <option selected>--Select--</option>
+              <option value="very_satisfied">Very satisfied</option>
+              <option value="satisfied">Satisfied</option>
+              <option value="neutral">Neutral</option>
+              <option value="dissatisfied">Dissatisfied</option>
+              <option value="very__dissatisfied">Very dissatisfied</option>
             </select>
           </div>
 
@@ -55,7 +57,7 @@
 
           <div class="form__group">
             <label>The ease of finding the recipes you were looking for</label>
-            <div class="rating__group">
+            <div class="rating__group" id="rating-span-1">
               <span>1</span>
               <span>2</span>
               <span>3</span>
@@ -66,7 +68,7 @@
 
           <div class="form__group">
             <label>The quality of the recipes</label>
-            <div class="rating__group">
+            <div class="rating__group" id="rating-span-2">
               <span>1</span>
               <span>2</span>
               <span>3</span>
@@ -77,24 +79,41 @@
 
           <div class="form__group">
             <label>How likely are you to recommend us to a family member or friend?</label>
-            <div class="rating__group">
+            <div class="rating__group" id="rating-span-3">
+              <span>0</span>
               <span>1</span>
               <span>2</span>
               <span>3</span>
               <span>4</span>
               <span>5</span>
+              <span>6</span>
+              <span>7</span>
+              <span>8</span>
+              <span>9</span>
             </div>
           </div>
 
           <div class="form__group">
             <label for="opinion-text">How would you improve the experience?</label>
-            <textarea id="opinion-text" cols="30" rows="10"></textarea>
+            <textarea id="opinion-text"></textarea>
+          </div>
+
+          <div class="form__goup">
+            <input type="submit" value="Send" class="form__btn">
           </div>
         </form>
       </div>
+      <!-- <div class="modal">
+        <div class="modal__card">
+          <h3>We received your comment!</h3>
+          <p>And we really appreciate it, thank you!</p>
+          <a href="index.html">Continue browsing</a>
+        </div>
+      </div> -->
     </section>
   </main>
 
   <script src="js/menu.js"></script>
+  <script src="js/opinion.js"></script>
 </body>
 </html>
