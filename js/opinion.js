@@ -1,5 +1,7 @@
 (function() {
   const form = document.querySelector('#form');
+  const errorMessage = document.querySelector('.form__error');
+  const modal = document.querySelector('.modal__hidden');
 
   let answers = {
     question1: '',
@@ -23,9 +25,11 @@
       if (active) {
         active.classList.remove('span__checked-1');
       }
-      const spanTargeted = e.target;
-      spanTargeted.classList.add('span__checked-1');
-      answers.question2 = e.target.innerText;
+      if (e.target.classList.contains('span')) {
+        const spanTargeted = e.target;
+        spanTargeted.classList.add('span__checked-1');
+        answers.question2 = e.target.innerText;
+      }
     })
   })
 
@@ -37,9 +41,11 @@
       if (active) {
         active.classList.remove('span__checked-2');
       }
-      const spanTargeted = e.target;
-      spanTargeted.classList.add('span__checked-2');
-      answers.question3 = e.target.innerText;
+      if (e.target.classList.contains('span')) {
+        const spanTargeted = e.target;
+        spanTargeted.classList.add('span__checked-2');
+        answers.question3 = e.target.innerText;
+      }
     })
   })
 
@@ -51,28 +57,42 @@
       if (active) {
         active.classList.remove('span__checked-3');
       }
-      const spanTargeted = e.target;
-      spanTargeted.classList.add('span__checked-3');
-      answers.question4 = e.target.innerText;
+      if (e.target.classList.contains('span')) {
+        const spanTargeted = e.target;
+        spanTargeted.classList.add('span__checked-3');
+        answers.question4 = e.target.innerText;
+      }
     })
   })
 
   // TEXTAREA
-const inputTextarea = document.querySelector('#opinion-text');
-inputTextarea.addEventListener('keyup', (e) => {
-  answers.question5 = e.target.value;
-})
+  const inputTextarea = document.querySelector('#opinion-text');
+  inputTextarea.addEventListener('blur', (e) => {
+    answers.question5 = e.target.value;
+  })
 
   form.addEventListener('submit', validarFormulario);
 
   function validarFormulario(e) {
     e.preventDefault();
 
-    console.log(answers);
+    if (!Object.values(answers).every(input => input !== '') && answers.question1 !== '0') {
+      showError();
+    } else {
+      showModal();
+    }
+  }
 
-    // if (Object.values(answers).every(input !== '')) {
-    //   console.log('hola');
-    // }
+  function showError() {
+    errorMessage.classList.add('form__error-active');
+    setInterval(() => {
+      errorMessage.classList.remove('form__error-active');
+    }, 3000);
+  }
 
+  function showModal() {
+    modal.classList.remove('modal__hidden');
+    modal.classList.add('modal');
+    document.body.classList.add('no-scroll');
   }
 })();
