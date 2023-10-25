@@ -100,17 +100,23 @@ function app() {
       mealCard.href = `recipe.html?id=${idMeal}`;
       mealCard.target = '_blank';
 
+      // DIV IMG
+      const mealDivImg = document.createElement('div');
+      mealDivImg.classList.add('card__picture');
+
       // IMG
       const mealImg = document.createElement('img');
       mealImg.src = strMealThumb;
       mealImg.classList.add('card__img');
+
+      mealDivImg.appendChild(mealImg);
 
       // TITLE
       const mealTitle = document.createElement('h3');
       mealTitle.classList.add('card__title');
       mealTitle.innerText = strMeal;
 
-      mealCard.appendChild(mealImg);
+      mealCard.appendChild(mealDivImg);
       mealCard.appendChild(mealTitle);
 
       cardsContainer.appendChild(mealCard);
