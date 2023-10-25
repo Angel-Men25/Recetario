@@ -177,7 +177,6 @@
 .random__container {
   padding: 3rem 0;
   background-color: #ffffff;
-  opacity: 0.8;
   background-image:  radial-gradient(#6ab29b 1.25px, transparent 1.25px), radial-gradient(#6ab29b 1.25px, #ffffff 1.25px);
   background-size: 50px 50px;
   background-position: 0 0,25px 25px;
