@@ -3,8 +3,6 @@
   --fun-green-opacity: #0ea0723e;
   --eden: #247158;
   --tradewind: #6ab29b;
-  --dawn-pink: #e4d5c7;
-  --almond-frost: #95877a;
 
   --white: #fff;
 }
@@ -216,7 +214,6 @@
   .form {
     width: 100%;
   }
-
   /* MODAL */
   .modal__card {
     width: 80%;

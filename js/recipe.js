@@ -1,18 +1,8 @@
-
 // VARIABLES
 const recipeSection = document.querySelector('#recipe');
 
 // EVENT LISTENERS
 document.addEventListener('DOMContentLoaded', obtainIdParam);
-
-// FUNCTIONS
-// function obtainIdParam() {
-//   const parametrosURL = new URLSearchParams(window.location.search);
-//   const idMeal = parseInt(parametrosURL.get('id'));
-//   console.log(parametrosURL);
-//   console.log(idMeal);
-//   // fetchDescription(idMeal);
-// }
 
 function obtainIdParam() {
   const parametrosURL = new URLSearchParams(window.location.search);

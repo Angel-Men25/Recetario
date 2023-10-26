@@ -28,7 +28,7 @@ function app() {
 
   function showCategories(categories) {
     categories.forEach(category => {
-      const { idCategory, strCategory, strCategoryThumb } = category;
+      const { strCategory, strCategoryThumb } = category;
       // DIV
       const dishA = document.createElement('a');
       dishA.classList.add('categories__card');
@@ -75,7 +75,7 @@ function app() {
 
     cardsSection.style.margin = '5rem auto';
 
-    limpiarHTMLSection();
+    cleanHTMLSection();
 
     const recipesLength = meals.length;
 
@@ -84,8 +84,8 @@ function app() {
     cardsSectionTitle.innerHTML = `(${recipesLength}) Recipes`;
     cardsSection.appendChild(cardsSectionTitle);
 
-    // Limpiar HTML
-    limpiarHTML();
+    // Clean HTML
+    cleanHTML();
 
     meals.forEach(meal => {
       const { idMeal, strMeal, strMealThumb } = meal;
@@ -121,13 +121,13 @@ function app() {
 
   }
 
-  function limpiarHTML() {
+  function cleanHTML() {
     while (cardsContainer.firstChild) {
       cardsContainer.removeChild(cardsContainer.firstChild);
     }
   }
 
-  function limpiarHTMLSection() {
+  function cleanHTMLSection() {
     while (cardsSection.firstChild) {
       cardsSection.removeChild(cardsSection.firstChild);
     }
