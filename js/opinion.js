@@ -71,9 +71,9 @@
     answers.question5 = e.target.value;
   })
 
-  form.addEventListener('submit', validarFormulario);
+  form.addEventListener('submit', validateForm);
 
-  function validarFormulario(e) {
+  function validateForm(e) {
     e.preventDefault();
 
     if (!Object.values(answers).every(input => input !== '') && answers.question1 !== '0') {

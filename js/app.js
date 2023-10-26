@@ -7,11 +7,12 @@ function app() {
   // VARIABLES
   const divCategories = document.querySelector('#categories');
   const cardsSection = document.querySelector('.cards__section');
-  const cardsContainer = document.querySelector('#cards-container');
-  
-  const randomBtn = document.querySelector('#random-meal');
+  const cardsContainer = document.querySelector
 
-  // document.addEventListener('DOMContentLoaded', fetchData);
+  const form = document.querySelector('#form');
+  const inputEmail = document.querySelector('#email');
+  const successMessage = document.querySelector('.newsletter__success');
+
   fetchData();
 
   async function fetchData() {
@@ -138,7 +139,38 @@ function app() {
     }
   }
 
+  // FORMS
 
+  const regex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+
+  let emailStatus = false;
+  let email = '';
+
+  inputEmail.addEventListener('keyup', validarEmail);
+
+  function validarEmail(e) {
+    if (!regex.test(inputEmail.value)) {
+      inputEmail.style.border = '2px solid red';
+      input = false;
+    } else {
+      inputEmail.style.border = '2px solid green';
+      emailStatus = true;
+      email = e.target.value;
+    }
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault()
+  
+    if (emailStatus) {
+      form.reset();
+      successMessage.classList.add('newsletter__success--active');
+      setInterval(() => {
+        successMessage.classList.remove('newsletter__success--active');
+      }, 3000);
+      return;
+    }
+  })
 }
 
 document.addEventListener('DOMContentLoaded', app);
