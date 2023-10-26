@@ -1,13 +1,8 @@
-// The Cocktail DB 
-// https://www.thecocktaildb.com/api.php
-// The Meal DB 
-// https://www.themealdb.com/api.php
-
 function app() {
   // VARIABLES
   const divCategories = document.querySelector('#categories');
   const cardsSection = document.querySelector('.cards__section');
-  const cardsContainer = document.querySelector
+  const cardsContainer = document.querySelector('#cards-container');
 
   const form = document.querySelector('#form');
   const inputEmail = document.querySelector('#email');
@@ -19,13 +14,11 @@ function app() {
     try {
       const url = 'https://www.themealdb.com/api/json/v1/1/categories.php';
       const response = await fetch(url);
-      // console.log(response);
       if (response.status === 404) {
         // SORRY PAGE NOT FOUND
       } else {
-        // PAGINA FUNCIONA
+        // PAGINA IS WORKING
         const data = await response.json();
-        // console.log(data.categories);
         showCategories(data.categories);
       }
     } catch (error) {
