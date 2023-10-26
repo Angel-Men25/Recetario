@@ -27,11 +27,13 @@ function obtainIdParam() {
 
 // Fetch when URL has ID parameter
 async function fetchDescriptionId(id) {
+  
+  showSpinner();
+
   try {
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
     const response = await fetch(url);
     const data = await response.json();
-    // console.log(data.meals);
     showDescription(data.meals[0]);
   } catch (error) {
     console.log(error);
@@ -51,8 +53,11 @@ async function fetchRandomMeal() {
 }
 
 function showDescription(description) {
+
+  cleanHTML();
+
   // console.log(description);
-  const { strMeal, strArea, strInstructions, strMealThumb, strYoutube, strCategory } = description;
+  const { idMeal, strMeal, strArea, strInstructions, strMealThumb, strYoutube, strCategory } = description;
   // META TAG TITLE
   const titleTag = document.getElementsByTagName('title');
   titleTag[0].innerText = strMeal;
@@ -176,11 +181,35 @@ function showDescription(description) {
   instructionsLink.href = strYoutube;
   instructionsLink.target = '_blank';
   instructionsLink.innerText = 'Watch video';
-
-
+  
   recipeContainer.appendChild(recipeIngredients);
   recipeContainer.appendChild(recipeInstructions);
   recipeContainer.appendChild(instructionsLink);
-
+  
   recipeSection.appendChild(recipeContainer);
+}
+
+function cleanHTML() {
+  while (recipeSection.firstChild) {
+    recipeSection.removeChild(recipeSection.firstChild);
+  }
+}
+
+function showSpinner() {
+
+  cleanHTML();
+
+  const spinner = document.createElement('div');
+  spinner.classList.add('sk-chase');
+
+  spinner.innerHTML = `
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+  `;
+
+  recipeSection.appendChild(spinner);
 }
