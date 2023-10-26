@@ -30,9 +30,10 @@ function app() {
     categories.forEach(category => {
       const { idCategory, strCategory, strCategoryThumb } = category;
       // DIV
-      const dishBtn = document.createElement('button');
-      dishBtn.classList.add('categories__card');
-      dishBtn.dataset.id = strCategory;
+      const dishA = document.createElement('a');
+      dishA.classList.add('categories__card');
+      dishA.href = '#cards-container';
+      dishA.dataset.id = strCategory;
 
       // IMG
       const mealImg = document.createElement('img');
@@ -45,10 +46,10 @@ function app() {
       mealTitle.innerText = strCategory;
 
 
-      dishBtn.appendChild(mealImg);
-      dishBtn.appendChild(mealTitle);
+      dishA.appendChild(mealImg);
+      dishA.appendChild(mealTitle);
 
-      divCategories.appendChild(dishBtn);
+      divCategories.appendChild(dishA);
     });
   }
 
@@ -74,7 +75,7 @@ function app() {
 
     cardsSection.style.margin = '5rem auto';
 
-    limpiarHTMLSECTION();
+    limpiarHTMLSection();
 
     const recipesLength = meals.length;
 
@@ -126,7 +127,7 @@ function app() {
     }
   }
 
-  function limpiarHTMLSECTION() {
+  function limpiarHTMLSection() {
     while (cardsSection.firstChild) {
       cardsSection.removeChild(cardsSection.firstChild);
     }
