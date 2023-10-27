@@ -44,14 +44,24 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  padding: 0.4rem 0;
 }
 
 .nav__logo {
   color: var(--white);
   text-decoration: none;
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.nav__logo img {
+  width: 55px;
+  display: block;
+}
+.nav__logo h1 {
+  transform: translateY(3px);
+  margin: 0;
 }
 
 .open-menu,
@@ -163,5 +173,14 @@ body {
   .close-menu {
     align-self: flex-end;
     margin: 2rem 3rem 0;
+  }
+}
+
+@media screen and (max-width: 485px) {
+  .nav__logo img {
+    width: 48px;
+  }
+  .nav__logo h1 {
+    display: none;
   }
 }
