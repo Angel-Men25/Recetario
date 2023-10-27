@@ -43,6 +43,7 @@ function app() {
       // TITLE
       const mealTitle = document.createElement('h2');
       mealTitle.classList.add('categories__title');
+      mealTitle.style.color = 'black';
       mealTitle.innerText = strCategory;
 
 
@@ -164,6 +165,8 @@ function app() {
       }, 3000);
       return;
     }
+
+    inputEmail.style.border = '2px solid red';
   })
 }
 
