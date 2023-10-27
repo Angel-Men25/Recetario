@@ -263,7 +263,7 @@
 }
 .newsletter__email, 
 .newsletter__submit {
-  padding: 0.3rem 0.8rem;
+  padding: 0.4rem 0.8rem;
   outline: none;
   border-radius: 5px;
   font-size: 0.8rem;
@@ -278,7 +278,7 @@
   border: 2px solid transparent;
   background-color: var(--tradewind);
   cursor: pointer;
-  padding: 0.5rem 0.8rem;
+  padding: 0.4rem 0.8rem;
 }
 .newsletter__submit:hover {
   opacity: 80%;
@@ -331,6 +331,7 @@
 }
 
 @media screen and (max-width: 815px) {
+  /* CARDS SECTION */
   .cards {
     width: 90%;
   }

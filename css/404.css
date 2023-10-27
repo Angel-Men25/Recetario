@@ -1,0 +1,51 @@
+:root {
+  --fun-green: #186049;
+  --eden: #247158;
+  --tradewind: #6ab29b;
+
+  --white: #fff;
+}
+
+body {
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #6ab29b5d;
+  height: 200vh;
+}
+
+.container {
+  width: 80%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.section1 {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.wave {
+  background-image: url('../assets/images/wave.svg');
+  width: 100%;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateX(180deg);
+}
+
+/* .section2 {
+  background-color: #247158;
+  width: 100%;
+  height: 100vh;
+} */
