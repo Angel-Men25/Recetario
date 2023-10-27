@@ -223,6 +223,8 @@
   display: flex;
   gap: 4rem;
   padding-right: 3rem;
+  font-size: 0.9rem;
+  border-right: 2px solid #6ab29b28;
 }
 
 .cols__title {
@@ -352,6 +354,8 @@
     display: flex;
     gap: 2rem;
     padding-right: 1rem;
+    border-right: none;
+    border-bottom: 2px solid #6ab29b28;
   }
   .footer__media {
     max-width: 350px;
