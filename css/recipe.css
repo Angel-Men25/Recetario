@@ -8,7 +8,7 @@
 
 .recipe {
   width: 100%;
-  margin: 4rem 0;
+  margin: 67.8px 0;
 }
 
 /* RECIPE TOP */
@@ -172,7 +172,7 @@
     transform: scale(1.0); 
   } 
 }
-/* ======== SPINNER ======== */
+/* ========================= */
 
 
 /* MEDIA QUERIES */
@@ -191,5 +191,11 @@
   }
   .recipe__texts {
     padding-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 485px) {
+  .recipe {
+    margin: 60.8px 0;
   }
 }

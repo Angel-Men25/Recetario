@@ -102,7 +102,9 @@ function app() {
 
       // IMG
       const mealImg = document.createElement('img');
+      mealImg.loading = 'lazy';
       mealImg.src = strMealThumb;
+      mealImg.alt = strMeal;
       mealImg.classList.add('card__img');
 
       mealDivImg.appendChild(mealImg);
